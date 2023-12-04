@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectTrap : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class SelectTrap : MonoBehaviour
     public GameObject lineV;
     public GameObject lineH;
 
-    //public GameObject trap;
+    public GameObject trapUI;
     public int trapNum;
     public static SelectTrap index;
+    public PlaceTrap placeTrap;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,11 @@ public class SelectTrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T)) {
+            trapUI.gameObject.SetActive(!trapUI.gameObject.activeSelf);
+            DisableHighlight();
+            placeTrap.ghost.SetActive(!placeTrap.ghost.activeSelf);
+        }
         if (Input.GetKeyDown("1")) {
             Button1();
             trapNum = 1;

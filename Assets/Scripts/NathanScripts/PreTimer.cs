@@ -8,8 +8,8 @@ public class PreTimer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] public float remainingTime;
     public GameObject startImg;
-    public GameObject highlight;
-    public GameObject trapMenu;
+    //public GameObject highlight;
+    //public GameObject trapMenu;
     public float delay = 3;
     float t;
     // Start is called before the first frame update
@@ -33,8 +33,8 @@ public class PreTimer : MonoBehaviour
             timerText.enabled = false;
             startImg.GetComponent<Animator>().SetTrigger("start");
 
-            highlight.SetActive(false);
-            trapMenu.SetActive(false);
+            //highlight.SetActive(false);
+            //trapMenu.SetActive(false);
             /*t += Time.deltaTime;
             if (t > delay)
             {

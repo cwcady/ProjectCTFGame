@@ -12,7 +12,7 @@ public class PlaceTrap : MonoBehaviour
     public GameObject trap4;
 
     public int tNum;
-    private int totalTraps = 10;
+    public int totalTraps = 10;
     private float x;
     // Start is called before the first frame update
     void Start()
@@ -61,10 +61,9 @@ public class PlaceTrap : MonoBehaviour
         else {
             ghost.SetActive(false);
         }
-        if (x == 0) {
-            //Debug.Log("time: " + x);
+        /*if (x == 0) {
             totalTraps = 0;
             ghost.SetActive(false);
-        }
+        }*/
     }
 }

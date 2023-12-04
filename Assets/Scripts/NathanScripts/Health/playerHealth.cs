@@ -77,9 +77,15 @@ public class playerHealth : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (!other.CompareTag("Projectile")) { return; }
-        
-        health -= 10;
-        lerpTimer = 0;
+        if (other.CompareTag("Projectile")) 
+        {
+            health -= 5;
+            lerpTimer = 0;
+        }
+        else if (other.CompareTag("Bomb")) 
+        {
+            health -= 25;
+            lerpTimer = 0;
+        }
     }
 }

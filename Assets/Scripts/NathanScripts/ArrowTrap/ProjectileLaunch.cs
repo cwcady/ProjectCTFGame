@@ -7,6 +7,7 @@ public class ProjectileLaunch : MonoBehaviour
     public GameObject projectile;
     public Transform spawnLocation1;
     public Transform spawnLocation2;
+    public Transform spawnLocation3;
     public Quaternion spawnRotate;
     public Detection detection;
     public float spawnTime = 0.5f;
@@ -29,6 +30,9 @@ public class ProjectileLaunch : MonoBehaviour
                 Instantiate(projectile, spawnLocation1.position, spawnRotate);
                 if (Random.Range(5, 10) % 2 == 0) {
                     Instantiate(projectile, spawnLocation2.position, spawnRotate);
+                }
+                else {
+                    Instantiate(projectile, spawnLocation3.position, spawnRotate);
                 }
                 timer = 0;
             }

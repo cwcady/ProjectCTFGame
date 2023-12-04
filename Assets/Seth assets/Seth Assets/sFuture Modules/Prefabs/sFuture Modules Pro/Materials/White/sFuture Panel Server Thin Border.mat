@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: sFuture Panel Server Thin Border
+  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 2100000, guid: 1dad0b0e7d069e74da69fce4f48d0125, type: 2}
+  m_ModifiedSerializedProperties: 2
+  m_ValidKeywords:
+  - _EMISSION
+  - _NORMALMAP
+  - _PARALLAXMAP
+  - _SPECGLOSSMAP
+  m_InvalidKeywords: []
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 636f6e2253f1e8848aad8ca808b3219c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: 44a654399a16ac041882f9a06abadd32, type: 3}
+        m_Scale: {x: 1, y: 1.5}
+        m_Offset: {x: 0.5, y: 10.25}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0180eb7035db0e8448511d032b8fd839, type: 3}
+        m_Scale: {x: 1, y: 1.5}
+        m_Offset: {x: 0.5, y: 10.25}
+    - _OcclusionMap:
+        m_Texture: {fileID: 2800000, guid: 0dcaa0136fafbc944abcba882ff7b1e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 39c8476c7ea6db1498fd8abf1df3f2c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: c96b3daf2d24cf549a8c53da42d35887, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []

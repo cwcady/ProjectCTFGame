@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -13,10 +14,14 @@ public class Weapon : MonoBehaviour
     public Recoil Recoil_Script;
     public ParticleSystem muzzleFlash;
     public AudioSource weaponSoundSource;
+    public int ammo = 30;
+    public TextMeshProUGUI ammoText;
 
     public void Start()
     {
        weaponSoundSource.volume = 0.3f;
+        ammoText.text = ammo + "/30";
+
     }
 
     void Update()
@@ -27,12 +32,24 @@ public class Weapon : MonoBehaviour
             nextFire -= Time.deltaTime;
         }
 
-        if(Input.GetButton("Fire1") && nextFire <= 0)
+        if(Input.GetButton("Fire1") && nextFire <= 0 && ammo > 0)
         {
             nextFire = 1 / fireRate;
-
+            ammo--;
+            ammoText.text = ammo + "/30";
             Fire(); 
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+            ammoText.text = ammo + "/30";
+        }
+    }
+
+    void Reload()
+    {
+        ammo = 30;
     }
 
     void AimDownSight()

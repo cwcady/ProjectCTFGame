@@ -28,6 +28,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public static RoomManager instance;
 
+    public string roomNameToJoin = "test";
+
     private void Awake()
     {
         instance = this;
@@ -42,7 +44,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connecting");
         teamNumber = 1;
-        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.JoinOrCreateRoom(roomNameToJoin, null, null);
         teamSelectUI.SetActive(false);
         connectingUI.SetActive(true);
     }
@@ -50,38 +52,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connecting");
         teamNumber = 2;
-        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.JoinOrCreateRoom(roomNameToJoin, null, null);
         teamSelectUI.SetActive(false);
         connectingUI.SetActive(true);
     }
 
-    void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
-
-
-    public override void OnConnectedToMaster()
-    {
-        base.OnConnectedToMaster();
-
-        Debug.Log("Connected");
-        PhotonNetwork.JoinLobby();
-    }
-
-    public override void OnJoinedLobby()
-    {
-        base.OnJoinedLobby();
-
-        PhotonNetwork.JoinOrCreateRoom("test", null, null);
-
-        Debug.Log("Joined Lobby");
-    }
+    
 
     public override void OnJoinedRoom()
     {

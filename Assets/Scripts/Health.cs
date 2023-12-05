@@ -2,28 +2,85 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEditor;
-using UnityEngine.UIElements;
-//using UnityEditor.EditorTools;
+using UnityEngine.UI;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
     public bool isLocalPlayer;
-    public int health;
+    public float health;
+    private float maxHealth = 100f;
     public bool hasBlue;
     public bool hasRed;
     public GameObject flagBlue;
     public GameObject flagRed;
     public Vector3 flagPosition;
+    public TextMeshProUGUI healthText;
+    public Image frontBar;
+   // public Image backBar;
+    public float lerpTimer;
+    private float chipSpeed = 2f;
+    private float originalHealthBarSize;
+    public RectTransform healthbar;
 
-    
+
+    private void Start()
+    {
+        originalHealthBarSize = healthbar.sizeDelta.x;
+    }
+
+    private void Update()
+    {
+        
+    }
+    /*
+    void Update()
+    {
+        health = Mathf.Clamp(health, 0, maxHealth);
+
+        //UpdateHealthUI();
+        healthText.text = health + "/100";
+    }*/
+    /*
+    public void UpdateHealthUI()
+    {
+        //Debug.Log(health);
+        float fillf = frontBar.fillAmount;
+        float fillb = backBar.fillAmount;
+        float hFraction = health / maxHealth;
+        if (fillb > hFraction)
+        {
+            frontBar.fillAmount = hFraction;
+            backBar.color = Color.red;
+            lerpTimer += Time.deltaTime;
+            float percent = lerpTimer / chipSpeed;
+            percent = percent * percent;
+            backBar.fillAmount = Mathf.Lerp(fillb, hFraction, percent);
+        }
+        if (fillf < hFraction)
+        {
+            backBar.fillAmount = hFraction;
+            backBar.color = Color.green;
+            lerpTimer += Time.deltaTime;
+            float percent = lerpTimer / chipSpeed;
+            percent = percent * percent;
+            frontBar.fillAmount = Mathf.Lerp(fillf, backBar.fillAmount, percent);
+        }
+    }
+    */
 
     [PunRPC]
-    public void TakeDamage(int _damage)
+    public void TakeDamage(float _damage)
     {
+       
         health -= _damage;
+        Debug.Log(health);
+        //healthbar.sizeDelta = new Vector2(originalHealthBarSize * health / 100f, healthbar.sizeDelta.y);
+        //lerpTimer = 0;
+        frontBar.fillAmount = health / maxHealth;
+        healthText.text = health + "/100";
 
-        if(health <= 0)
+        if (health <= 0)
         {
             if(isLocalPlayer)
             {
@@ -43,4 +100,6 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    
 }

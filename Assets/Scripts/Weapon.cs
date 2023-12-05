@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class Weapon : MonoBehaviour
 {
-    public int damage;
+    public float damage;
     public Camera camera;
     public float fireRate;
 

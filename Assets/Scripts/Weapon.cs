@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
 
     public void Start()
     {
-       
+       weaponSoundSource.volume = 0.3f;
     }
 
     void Update()

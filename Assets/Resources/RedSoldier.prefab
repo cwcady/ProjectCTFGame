@@ -281,7 +281,6 @@ MonoBehaviour:
   flagPosition: {x: 0, y: 0, z: 0}
   healthText: {fileID: 6084627285635407461}
   frontBar: {fileID: 2642405315112996521}
-  lerpTimer: 0
   healthbar: {fileID: 7434826314757245232}
 --- !u!114 &5914758518806104157
 MonoBehaviour:
@@ -790,7 +789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7126586709989648373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1651,7 +1650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6388533300822294898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2076,7 +2075,6 @@ MonoBehaviour:
   flagPosition: {x: 0, y: 0, z: 0}
   healthText: {fileID: 6084627285635407461}
   frontBar: {fileID: 0}
-  lerpTimer: 0
   healthbar: {fileID: 0}
 --- !u!224 &7434826314757245232 stripped
 RectTransform:

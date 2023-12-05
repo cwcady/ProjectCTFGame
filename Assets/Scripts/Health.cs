@@ -18,8 +18,6 @@ public class Health : MonoBehaviour
     public TextMeshProUGUI healthText;
     public Image frontBar;
    // public Image backBar;
-    public float lerpTimer;
-    private float chipSpeed = 2f;
     private float originalHealthBarSize;
     public RectTransform healthbar;
 
@@ -76,7 +74,6 @@ public class Health : MonoBehaviour
         health -= _damage;
         Debug.Log(health);
         //healthbar.sizeDelta = new Vector2(originalHealthBarSize * health / 100f, healthbar.sizeDelta.y);
-        //lerpTimer = 0;
         frontBar.fillAmount = health / maxHealth;
         healthText.text = health + "/100";
 

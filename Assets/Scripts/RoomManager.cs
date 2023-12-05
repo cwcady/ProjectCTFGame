@@ -21,9 +21,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject roomCamera;
     public GameObject teamSelectUI;
     public GameObject connectingUI;
+    public GameObject scoreUI;
 
-    [SerializeField] TextMeshProUGUI redScore;
-    [SerializeField] TextMeshProUGUI blueScore;
+    [SerializeField] TextMeshProUGUI redScoreText;
+    [SerializeField] TextMeshProUGUI blueScoreText;
     public int redTeamScore = 0;
     public int blueTeamScore = 0;
 
@@ -35,6 +36,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        SetScore();
         instance = this;
     }
 
@@ -63,8 +65,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        redScore.text = "Red Team Score: " + redTeamScore;
-        blueScore.text = "Blue Team Score: " + blueScore;
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            redTeamScore += 1;
+            blueTeamScore += 1;
+        }
+        SetScore();
     }
 
 
@@ -91,7 +97,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             _player.GetComponent<PlayerSetup>().IsLocalPlayer();
             _player.GetComponent<Health>().isLocalPlayer = true;
             _player.GetComponent<PhotonView>().RPC("SetTeam", RpcTarget.All, teamNumber);
-            
+            scoreUI.SetActive(true);
 
         }
         if(teamNumber == 2)
@@ -102,15 +108,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
             _player.GetComponent<PlayerSetup>().IsLocalPlayer();
             _player.GetComponent<Health>().isLocalPlayer = true;
             _player.GetComponent<PhotonView>().RPC("SetTeam", RpcTarget.All, teamNumber);
-            
+            scoreUI.SetActive(true);
         }
     }
 
     public void SetScore()
     {
-        Hashtable gameScore = new Hashtable();
+        /*Hashtable gameScore = new Hashtable();
         gameScore["Blue Score"] = blueTeamScore;
-        gameScore["Red Score"] = redTeamScore;
+        gameScore["Red Score"] = redTeamScore;*/
+        redScoreText.text = "Red Team Score: " + redTeamScore;
+        blueScoreText.text = "Blue Team Score: " + blueTeamScore;
     }
    
 }

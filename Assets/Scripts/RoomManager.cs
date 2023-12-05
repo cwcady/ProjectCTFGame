@@ -68,6 +68,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.O))
         {
             redTeamScore += 1;
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
             blueTeamScore += 1;
         }
         SetScore();

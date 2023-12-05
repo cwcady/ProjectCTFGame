@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using Photon.Pun.UtilityScripts;
+using TMPro;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
@@ -21,6 +22,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject teamSelectUI;
     public GameObject connectingUI;
 
+    [SerializeField] TextMeshProUGUI redScore;
+    [SerializeField] TextMeshProUGUI blueScore;
     public int redTeamScore = 0;
     public int blueTeamScore = 0;
 
@@ -57,7 +60,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
         connectingUI.SetActive(true);
     }
 
-    
+
+    private void Update()
+    {
+        redScore.text = "Red Team Score: " + redTeamScore;
+        blueScore.text = "Blue Team Score: " + blueScore;
+    }
+
+
+   
 
     public override void OnJoinedRoom()
     {

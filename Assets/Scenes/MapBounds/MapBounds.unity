@@ -8824,6 +8824,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3794126150359376858, guid: abf9c0bdbac1d24448d47af0ccfc645b, type: 3}
+      propertyPath: redScore
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126150359376858, guid: abf9c0bdbac1d24448d47af0ccfc645b, type: 3}
+      propertyPath: blueScore
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126150359376858, guid: abf9c0bdbac1d24448d47af0ccfc645b, type: 3}
       propertyPath: teamSelectUI
       value: 
       objectReference: {fileID: 211358347}

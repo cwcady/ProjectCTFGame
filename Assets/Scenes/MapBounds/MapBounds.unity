@@ -8605,6 +8605,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3794126150359376858, guid: abf9c0bdbac1d24448d47af0ccfc645b, type: 3}
+      propertyPath: redScore
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126150359376858, guid: abf9c0bdbac1d24448d47af0ccfc645b, type: 3}
+      propertyPath: blueScore
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126150359376858, guid: abf9c0bdbac1d24448d47af0ccfc645b, type: 3}
       propertyPath: teamSelectUI
       value: 
       objectReference: {fileID: 211358347}
@@ -42177,7 +42185,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 878726332}
   m_HandleRect: {fileID: 878726331}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
